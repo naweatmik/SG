@@ -1,0 +1,242 @@
+.skills-section {
+  padding: 8rem 0;
+  position: relative;
+  overflow: visible;
+}
+
+.skills-section::before {
+  content: '';
+  position: absolute;
+  top: 30%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ══ 이런 분께 딱입니다 ══ */
+
+.tc-layout {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 4rem;
+  margin: 5rem 0 10rem;
+  align-items: start;
+}
+
+.tc-sticky {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: sticky;
+  top: 35vh;
+  align-self: start;
+}
+
+.tc-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.tc-card {
+  position: relative;
+  padding: 2.25rem 2rem 2rem;
+  border-radius: 22px;
+  border: 1px solid color-mix(in srgb, var(--accent) 18%, rgba(255,255,255,0.07));
+  background: color-mix(in srgb, var(--accent) 5%, rgba(12,12,22,0.85));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.35s ease;
+}
+
+.tc-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 10% 0%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 60%);
+  pointer-events: none;
+  opacity: 0.7;
+  transition: opacity 0.35s ease;
+}
+
+.tc-card:hover {
+  transform: translateY(-6px);
+  border-color: color-mix(in srgb, var(--accent) 45%, rgba(255,255,255,0.12));
+  box-shadow: 0 20px 40px -8px rgba(0,0,0,0.5), 0 0 50px -16px color-mix(in srgb, var(--accent) 40%, transparent);
+}
+
+.tc-card:hover::before { opacity: 1; }
+
+.tc-bar {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 70%, transparent), transparent);
+  border-radius: 0 0 22px 22px;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.tc-card:hover .tc-bar { opacity: 1; }
+
+.tc-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.tc-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #f1f5f9;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  position: relative;
+  z-index: 1;
+}
+
+.tc-desc {
+  font-size: 0.9rem;
+  color: rgba(226, 232, 240, 0.58);
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
+}
+
+/* ══ 취업 ══ */
+
+.jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.job-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding: 2.5rem 2rem 2rem;
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.35s ease;
+}
+
+.job-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 50%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.07), transparent);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.job-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 90% 60% at 50% 0%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+  transition: opacity 0.4s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-8px);
+  border-color: color-mix(in srgb, var(--accent) 55%, rgba(255,255,255,0.2));
+  box-shadow:
+    0 2px 0 inset rgba(255,255,255,0.12),
+    0 24px 48px -8px rgba(0,0,0,0.55),
+    0 0 80px -24px color-mix(in srgb, var(--accent) 50%, transparent);
+}
+
+.job-card:hover::after { opacity: 1; }
+
+.job-card-bar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  z-index: 2;
+  border-radius: 22px 22px 0 0;
+}
+
+.job-icon {
+  position: absolute;
+  top: 1.75rem;
+  right: 1.75rem;
+  font-size: 3.75rem;
+  line-height: 1;
+  opacity: 0.1;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.job-card:hover .job-icon { opacity: 0.22; transform: scale(1.1) rotate(8deg); }
+
+.job-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  position: relative;
+  z-index: 1;
+  margin-top: 0.25rem;
+}
+
+.job-desc {
+  font-size: 0.95rem;
+  color: rgba(226, 232, 240, 0.82);
+  line-height: 1.8;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.job-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.job-tag {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.32rem 0.85rem;
+  border-radius: 100px;
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  letter-spacing: 0.02em;
+}
+
+/* ══ 반응형 ══ */
+
+@media (max-width: 1024px) {
+  .skills-section { padding: 5rem 0; }
+  .jobs-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .tc-layout { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+@media (max-width: 600px) {
+  .jobs-grid { grid-template-columns: 1fr; }
+  .job-card { padding: 2rem 1.5rem; }
+}

@@ -1,0 +1,361 @@
+.promo-section {
+  padding: 8rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 배경 글로우 */
+.promo-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.promo-glow-l {
+  background: rgba(139, 92, 246, 0.07);
+  top: -10%;
+  left: -15%;
+}
+
+.promo-glow-r {
+  background: rgba(34, 211, 238, 0.06);
+  bottom: 0;
+  right: -10%;
+}
+
+.promo-section .section-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── 헤더 ── */
+.promo-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.promo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 1rem;
+  border-radius: 100px;
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  background: rgba(139, 92, 246, 0.08);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c4b5fd;
+  margin-bottom: 1.5rem;
+}
+
+.promo-title {
+  font-size: clamp(2rem, 4.5vw, 3.8rem);
+  font-weight: 900;
+  line-height: 1.4;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+.promo-hl {
+  background: linear-gradient(135deg, #c4b5fd 0%, #67e8f9 60%, #f9a8d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: clamp(2rem, 4.5vw, 5.2rem);
+}
+
+/* ── 비용 비교 카드 ── */
+.promo-cost-card {
+  border-radius: 24px;
+  border: none;
+  background: none;
+  margin-bottom: 4rem;
+  padding: 2.75rem 3rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+
+/* 절감 뱃지 */
+.cost-saving-badge {
+  padding: 0.3rem 1rem;
+  border-radius: 100px;
+  background: linear-gradient(135deg, #8b5cf6, #22d3ee);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+  z-index: 2;
+}
+
+/* 가격 비교 행 */
+.cost-top {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.cost-original {
+  font-size: 1rem;
+  color: rgba(148, 163, 184, 0.5);
+  font-weight: 500;
+}
+
+.cost-original s {
+  margin-left: 0.3rem;
+}
+
+.cost-arrow {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.cost-final {
+  font-size: clamp(2.4rem, 4vw, 3.5rem);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  background: linear-gradient(135deg, #34d399, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cost-final small {
+  font-size: 0.45em;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+/* 바 */
+.cost-bar-wrap {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.cost-bar {
+  display: flex;
+  height: 36px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.cost-bar-gov {
+  width: 0;
+  background: linear-gradient(90deg, #8b5cf6, #22d3ee);
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  border-radius: 10px 0 0 10px;
+  overflow: hidden;
+}
+
+.cost-bar-self {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 0.75rem;
+}
+
+.cost-bar-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+}
+
+.cost-bar-self .cost-bar-label {
+  color: rgba(148, 163, 184, 0.5);
+}
+
+.cost-note {
+  font-size: 0.82rem;
+  color: rgba(148, 163, 184, 0.45);
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .promo-cost-card {
+    padding: 2rem 1rem;
+  }
+
+  .cost-bar-label {
+    font-size: 0.62rem;
+  }
+}
+
+/* ── 신청 단계 ── */
+.promo-steps-wrap {
+  margin-bottom: 3.5rem;
+}
+
+.promo-steps-title {
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.promo-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  position: relative;
+}
+
+.promo-step {
+  position: relative;
+  padding: 2rem 1.75rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.promo-step:hover {
+  border-color: rgba(139, 92, 246, 0.3);
+  background: rgba(139, 92, 246, 0.04);
+}
+
+.step-icon {
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.step-num {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: #8b5cf6;
+}
+
+.step-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.step-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  white-space: pre-line;
+}
+
+/* 스텝 사이 연결선 */
+.step-connector {
+  display: none;
+}
+
+/* ── 혜택 요약 ── */
+.promo-benefits {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.promo-benefit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  text-align: center;
+  transition: all 0.25s ease;
+}
+
+.promo-benefit:hover {
+  border-color: rgba(139, 92, 246, 0.25);
+  background: rgba(139, 92, 246, 0.04);
+  transform: translateY(-3px);
+}
+
+.benefit-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.benefit-value {
+  font-size: 1.1rem;
+  font-weight: 800;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.benefit-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+
+/* ── 주의사항 ── */
+.promo-notice {
+  text-align: center;
+  font-size: 0.82rem;
+  color: rgba(148, 163, 184, 0.6);
+  line-height: 1.8;
+}
+
+.promo-notice strong {
+  color: #c4b5fd;
+  font-weight: 700;
+}
+
+/* ── 반응형 ── */
+@media (max-width: 768px) {
+  .promo-section {
+    padding: 5rem 0;
+  }
+
+  .promo-cost-card {
+    gap: 1.5rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .promo-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .promo-benefits {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .promo-benefits {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cost-saving-badge {
+    right: 1rem;
+  }
+}

@@ -1,0 +1,77 @@
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── 페이지 전체 배경 ── */
+.page-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.page-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  will-change: transform;
+}
+
+.orb-1 {
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+  top: -10%;
+  left: -10%;
+  animation: orbDrift1 22s ease-in-out infinite alternate;
+}
+
+.orb-2 {
+  width: 750px;
+  height: 750px;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.08) 0%, transparent 70%);
+  top: 30%;
+  right: -8%;
+  animation: orbDrift2 28s ease-in-out infinite alternate;
+}
+
+.orb-3 {
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(244, 114, 182, 0.07) 0%, transparent 70%);
+  bottom: 20%;
+  left: 20%;
+  animation: orbDrift3 20s ease-in-out infinite alternate;
+}
+
+.orb-4 {
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.07) 0%, transparent 70%);
+  bottom: -5%;
+  right: 15%;
+  animation: orbDrift4 25s ease-in-out infinite alternate;
+}
+
+@keyframes orbDrift1 {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(8vw, 12vh) scale(1.15); }
+}
+
+@keyframes orbDrift2 {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(-6vw, -10vh) scale(1.1); }
+}
+
+@keyframes orbDrift3 {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(5vw, -8vh) scale(1.2); }
+}
+
+@keyframes orbDrift4 {
+  from { transform: translate(0, 0) scale(1.1); }
+  to   { transform: translate(-7vw, 6vh) scale(1); }
+}
+
